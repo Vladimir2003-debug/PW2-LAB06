@@ -6,4 +6,9 @@ def home(request):
     return render(request, 'home.html',{})
 
 def add(request):
-    return render(request, 'result.html',{})
+    var1 = request.GET['numb1']
+    var2 = request.GET['numb2']
+
+    result = var1 + var2
+
+    return render(request, 'result.html',{'result':result})
