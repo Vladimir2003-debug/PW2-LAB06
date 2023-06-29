@@ -33,13 +33,13 @@
 								<div class="logo"><a href="index.html">Travello</a></div>
 								<nav class="main_nav">
 									<ul class="d-flex flex-row align-items-start justify-content-start">
-										<li class="active"><a href="index.html">Home</a></li>
+										<li class="active"><a href="">Home</a></li>
 										{% if user.is_authenticated %}
-										<li>Hello, {{user.first_name}}</li>
-										<li><a href="logout">Logout</a></li>
+										<li>Hello, {{user.username}}!</li>
+										<li><a href="accounts/logout">Logout</a></li>
 										{% else %}	
-										<li><a href="register.html">Register</a></li>
-										<li><a href="login.html">Login</a></li>
+										<li><a href="accounts/register">Register</a></li>
+										<li><a href="accounts/login">Login</a></li>
 										{% endif %}
 									</ul>
 								</nav>
@@ -209,12 +209,12 @@
 								<div class="destination_image">
 									<img src="{{dest.imagenCiudad.url}}" alt="no Found">
 
-									{% if dest.offer %}
+									{% if dest.ofertaTour %}
 									<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
 									{% endif %}
 								</div>
 								<div class="destination_content">
-									<div class="destination_title"><a href="destinations.html">{{dest.nombreCiudad}}</a>
+									<div class="destination_title"><a href="{{dest.id}}">{{dest.nombreCiudad}}</a>
 									</div>
 									<div class="destination_subtitle">
 										<p>{{dest.descripcionCiudad}}</p>
