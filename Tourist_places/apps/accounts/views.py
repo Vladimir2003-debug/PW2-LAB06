@@ -4,8 +4,7 @@ from django.contrib.auth.models import User, auth
 
 # Create your views here.
 
-
-def login(request):
+def loginUser(request):
 
     if request.method == 'POST':
         username = request.POST['username']
@@ -18,7 +17,7 @@ def login(request):
             return redirect("/")
         else:
             messages.info(request,'invalid credentials')
-            return redirect('')
+            return redirect('login')
 
     else:
         return render(request,'login.html')    
