@@ -7,4 +7,4 @@ class DestinosTuristicos(models.Model):
     descripcionCiudad = models.TextField()
     imagenCiudad = models.ImageField()
     precioTour = models.IntegerField()
-    ofertaTour = models.BooleanField(default=False)
+    ofertaTour = models.BooleanField()
